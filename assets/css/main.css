@@ -12,22 +12,19 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font:
-    "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway", sans-serif;
-  --nav-font: "Poppins", sans-serif;
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Outfit", sans-serif;
+  --nav-font: "Inter", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #f8fafc; /* Lighter, cooler gray for background */
+  --default-color: #334155; /* Slate 700 for text */
+  --heading-color: #0f172a; /* Slate 900 for headings */
+  --accent-color: #3b82f6; /* Modern Blue */
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -43,21 +40,22 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f4fafd;
+  --background-color: #f1f5f9;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #040b14;
-  --default-color: #ffffff;
+  --background-color: #0f172a;
+  --default-color: #cbd5e1;
   --heading-color: #ffffff;
-  --surface-color: #151f2b;
+  --surface-color: #1e293b;
   --contrast-color: #ffffff;
 }
 
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -88,6 +86,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  letter-spacing: -0.025em; /* Tighter letter spacing for modern headings */
 }
 
 /* PHP Email Form Messages
@@ -157,15 +156,16 @@ h6 {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 1px solid var(--surface-color);
+  box-shadow: 4px 0 24px 0 rgba(0,0,0,0.05);
 }
 
 .header .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border: 4px solid var(--surface-color);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .header .logo {
@@ -270,15 +270,17 @@ h6 {
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
-  padding: 15px 10px;
+  padding: 12px 15px;
   font-family: var(--nav-font);
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   white-space: nowrap;
   transition: 0.3s;
   width: 100%;
+  border-radius: 8px;
+  margin-bottom: 4px;
 }
 
 .navmenu a .navicon,
@@ -312,7 +314,8 @@ h6 {
 .navmenu a:hover,
 .navmenu .active,
 .navmenu .active:focus {
-  color: var(--nav-hover-color);
+  color: var(--heading-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
 }
 
 .navmenu a:hover .navicon,
@@ -526,6 +529,7 @@ section,
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  text-transform: capitalize;
 }
 
 .section-title h2:after {
@@ -537,6 +541,7 @@ section,
   background: var(--accent-color);
   left: 0;
   bottom: 0;
+  border-radius: 2px;
 }
 
 .section-title p {
@@ -802,11 +807,17 @@ section,
   text-transform: uppercase;
   margin-bottom: 10px;
   transition: all 0.3s ease-in-out;
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-weight: 500;
+  color: var(--default-color);
 }
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -831,6 +842,13 @@ section,
 
 .portfolio .portfolio-content img {
   transition: 0.3s;
+}
+
+/* Custom alignment for Unified S&D image */
+.portfolio .portfolio-content .snd-portfolio-img {
+  width: 100%;
+  aspect-ratio: 4/3; /* Enforce standard aspect ratio */
+  object-fit: cover;
 }
 
 .portfolio .portfolio-content .portfolio-info {
@@ -877,7 +895,7 @@ section,
 
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: color-mix(in srgb, var(--accent-color) 80%, white);
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
@@ -902,7 +920,7 @@ section,
 }
 
 .services .service-item .icon {
-  background: var(--accent-color);
+  background: var(--surface-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -910,22 +928,23 @@ section,
   height: 54px;
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid var(--accent-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
   margin-right: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .services .service-item .icon i {
-  color: var(--contrast-color);
+  color: var(--accent-color);
   font-size: 24px;
   line-height: 0;
 }
 
 .services .service-item:hover .icon {
-  background: var(--surface-color);
+  background: var(--accent-color);
 }
 
 .services .service-item:hover .icon i {
-  color: var(--accent-color);
+  color: var(--contrast-color);
 }
 
 .services .service-item .title {
@@ -1007,8 +1026,8 @@ section,
   background-color: var(--surface-color);
   position: relative;
   margin-bottom: 35px;
-  border-radius: 6px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .testimonials .testimonial-item p::after {
@@ -1021,6 +1040,7 @@ section,
   position: absolute;
   bottom: -20px;
   left: calc(50% - 20px);
+  filter: drop-shadow(0 4px 3px rgba(0,0,0,0.05));
 }
 
 .testimonials .swiper-wrapper {
@@ -1136,9 +1156,11 @@ section,
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
-  padding: 10px 30px;
+  padding: 12px 36px;
+  font-weight: 600;
   transition: 0.4s;
-  border-radius: 50px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .contact .php-email-form button[type="submit"]:hover {
@@ -1150,6 +1172,9 @@ section,
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+  height: 600px;
+  object-fit: contain;
+  background-color: #f0f0f0; /* Optional: background color for letterboxing */
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
@@ -1217,30 +1242,36 @@ section,
 # Service Details Section
 --------------------------------------------------------------*/
 .service-details .services-list {
-  padding: 10px 30px;
+  padding: 20px;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   margin-bottom: 20px;
+  border-radius: 12px;
+  background: var(--surface-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .service-details .services-list a {
   display: block;
   line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid
-    color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  color: var(--default-color);
   transition: 0.3s;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
 .service-details .services-list a.active {
-  color: var(--heading-color);
-  font-weight: 700;
+  color: var(--contrast-color);
+  font-weight: 600;
+  background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
 .service-details .services-list a:hover {
-  border-color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--heading-color);
 }
 
 .service-details .services-img {
@@ -1287,12 +1318,14 @@ section,
 }
 
 .resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
+  font-size: 14px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  padding: 6px 16px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  border-radius: 9999px; /* Pill shape */
 }
 
 .resume .content ul {
