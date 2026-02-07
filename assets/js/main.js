@@ -215,7 +215,15 @@
       let section = document.querySelector(navmenulink.hash);
       if (!section) return;
       let position = window.scrollY + 200;
+
+      // Check if we're at the bottom of the page
+      let isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50;
+
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      } else if (isAtBottom && navmenulink.hash === '#contact') {
+        // If at bottom of page, activate contact link
         document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
         navmenulink.classList.add('active');
       } else {
