@@ -1516,3 +1516,154 @@ section,
     font-size: 15px;
   }
 }
+
+/*--------------------------------------------------------------
+# Portfolio Detail Page - Key Responsibilities Styling
+--------------------------------------------------------------*/
+.portfolio-details .key-responsibilities-title {
+  color: var(--default-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.portfolio-details .key-responsibilities-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.portfolio-details .key-responsibilities-list li {
+  padding: 10px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  display: flex;
+  align-items: flex-start;
+}
+
+.portfolio-details .key-responsibilities-list li i {
+  color: var(--accent-color);
+  margin-right: 10px;
+  font-size: 1.1em;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.portfolio-details .key-responsibilities-list li span {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/*--------------------------------------------------------------
+# Global Responsive Fixes
+--------------------------------------------------------------*/
+
+/* Tablet breakpoint */
+@media (max-width: 991px) {
+  .portfolio-details .portfolio-details-slider img {
+    height: 400px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 767px) {
+  .portfolio-details .portfolio-details-slider img {
+    height: 300px;
+  }
+
+  .portfolio-details .portfolio-info {
+    padding: 20px;
+  }
+
+  .portfolio-details .portfolio-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  .portfolio-details .portfolio-description h2 {
+    font-size: 20px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .about .content h2 {
+    font-size: 20px;
+  }
+
+  .about .content ul li {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .page-title h1 {
+    font-size: 20px;
+  }
+
+  .resume .resume-title {
+    font-size: 22px;
+  }
+
+  .resume .resume-item h4 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .contact .info-item {
+    margin-bottom: 25px;
+  }
+
+  .contact .info-item i {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .portfolio-details .key-responsibilities-list li {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .portfolio-details .portfolio-description p {
+    font-size: 14px;
+  }
+
+  .portfolio-details .portfolio-info ul {
+    font-size: 14px;
+  }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+  .portfolio-details .portfolio-details-slider img {
+    height: 220px;
+  }
+
+  .portfolio .portfolio-filters li {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin: 0 3px;
+    margin-bottom: 8px;
+  }
+
+  section,
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title h2 {
+    font-size: 22px;
+  }
+
+  .page-title h1 {
+    font-size: 18px;
+  }
+
+  .footer {
+    padding: 25px 0;
+  }
+}

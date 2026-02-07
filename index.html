@@ -240,6 +240,96 @@
       .portfolio .portfolio-content .snd-portfolio-img {
         aspect-ratio: 16 / 9;
       }
+
+      /* ---- Responsive overrides ---- */
+
+      /* Tablet */
+      @media (max-width: 991px) {
+        .publication-card {
+          padding: 22px;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 767px) {
+        .interests-grid {
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 10px;
+        }
+
+        .interest-item {
+          padding: 10px 14px;
+        }
+
+        .interest-item span {
+          font-size: 14px;
+        }
+
+        .publication-card {
+          padding: 18px;
+        }
+
+        .publication-card h5 {
+          font-size: 15px;
+        }
+
+        .publication-card .pub-authors,
+        .publication-card .pub-venue {
+          font-size: 13px;
+        }
+
+        .publication-card .pub-links a {
+          font-size: 12px;
+          padding: 4px 10px;
+        }
+
+        #certifications .cert-grid {
+          gap: 20px;
+        }
+
+        #certifications .cert-card {
+          padding: 16px;
+        }
+
+        #certifications .cert-card h5 {
+          font-size: 14px;
+        }
+
+        .skill-category h5 {
+          font-size: 14px !important;
+        }
+
+        .skill-tags .tag {
+          padding: 5px 10px;
+          font-size: 12px;
+        }
+
+        .footer .social-links a {
+          width: 32px;
+          height: 32px;
+          font-size: 14px;
+        }
+      }
+
+      /* Small mobile */
+      @media (max-width: 480px) {
+        .interests-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .publication-card {
+          padding: 15px;
+        }
+
+        .publication-card h5 {
+          font-size: 14px;
+          line-height: 1.4;
+        }
+
+        .section-divider {
+          margin: 25px 0;
+        }
+      }
     </style>
   </head>
 
