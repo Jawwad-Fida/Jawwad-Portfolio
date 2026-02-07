@@ -1392,3 +1392,127 @@ section,
     flex: 0 0 100%; /* 1 per row */
   }
 }
+
+/*--------------------------------------------------------------
+# Awards Section (Custom Styling)
+--------------------------------------------------------------*/
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.award-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  background: var(--surface-color);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-left-color: color-mix(in srgb, var(--accent-color) 80%, white);
+}
+
+.award-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  transition: all 0.3s ease;
+}
+
+.award-icon i {
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.award-icon.academic {
+  background: color-mix(in srgb, #10b981, transparent 88%);
+}
+
+.award-icon.academic i {
+  color: #10b981;
+}
+
+.award-card:hover .award-icon {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.award-card:hover .award-icon i {
+  color: var(--contrast-color);
+}
+
+.award-card:hover .award-icon.academic {
+  background: #10b981;
+}
+
+.award-card:hover .award-icon.academic i {
+  color: var(--contrast-color);
+}
+
+.award-content {
+  flex: 1;
+}
+
+.award-content h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.award-content h5 strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.award-content .award-period {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin: 0;
+  font-style: italic;
+}
+
+.award-content .award-period strong {
+  color: var(--heading-color);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .award-card {
+    padding: 16px;
+  }
+
+  .award-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .award-icon i {
+    font-size: 20px;
+  }
+
+  .award-content h5 {
+    font-size: 15px;
+  }
+}
