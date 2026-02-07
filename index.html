@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Jawwad (Fida) - Portfolio</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+    <meta content="Portfolio of Mohammed Jawwadul Islam (Fida) - IT Project Manager & Solution Architect with 3+ years of experience in Digital IT solutions, Agile delivery, and system architecture." name="description" />
+    <meta content="Jawwad, Fida, IT Project Manager, Solution Architect, Robi Axiata, Portfolio, Software Engineer, Machine Learning" name="keywords" />
 
     <!-- Favicons -->
     <link href="assets/img/jawwad-favicon.png" rel="icon" />
@@ -45,6 +45,202 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Custom Inline Styles -->
+    <style>
+      /* Skill tag badges */
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill-tags .tag {
+        display: inline-block;
+        padding: 6px 14px;
+        background: color-mix(in srgb, var(--accent-color), transparent 88%);
+        color: var(--accent-color);
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      }
+      .skill-tags .tag:hover {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+      }
+
+      /* About section image */
+      .about .img-fluid {
+        border-radius: 12px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Interests grid */
+      .interests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+      }
+      .interest-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 18px;
+        background: var(--surface-color);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+      }
+      .interest-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+        border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+      }
+      .interest-item i {
+        color: var(--accent-color);
+        margin-right: 12px;
+        font-size: 18px;
+      }
+      .interest-item span {
+        font-weight: 500;
+        color: var(--heading-color);
+        font-size: 15px;
+      }
+
+      /* Publication cards */
+      .publication-card {
+        padding: 28px;
+        background: var(--surface-color);
+        border-radius: 12px;
+        border-left: 4px solid var(--accent-color);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        margin-bottom: 24px;
+        transition: all 0.3s ease;
+      }
+      .publication-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.12);
+      }
+      .publication-card h5 {
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+      .publication-card .pub-authors {
+        font-size: 14px;
+        color: color-mix(in srgb, var(--default-color), transparent 15%);
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+      .publication-card .pub-venue {
+        font-size: 14px;
+        font-style: italic;
+        color: color-mix(in srgb, var(--default-color), transparent 25%);
+        margin-bottom: 14px;
+      }
+      .publication-card .pub-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .publication-card .pub-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 14px;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        color: var(--accent-color);
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .publication-card .pub-links a:hover {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+      }
+      .publication-card .pub-links a i {
+        font-size: 14px;
+      }
+
+      /* Certification card improvements */
+      #certifications .cert-card {
+        background: var(--surface-color);
+        border-radius: 12px;
+        border-left: 3px solid var(--accent-color);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+      }
+      #certifications .cert-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+      #certifications .cert-card h5 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--heading-color);
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+      #certifications .cert-card p {
+        font-size: 14px;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+      }
+
+      /* Contact section improvements */
+      .contact .row {
+        justify-content: center;
+      }
+      .contact .info-wrap {
+        border-radius: 16px;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+      }
+
+      /* Section divider for publications */
+      .section-divider {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, var(--accent-color), transparent);
+        margin: 40px 0;
+        border-radius: 2px;
+      }
+
+      /* Footer social links */
+      .footer .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: color-mix(in srgb, var(--default-color), transparent 90%);
+        color: var(--default-color);
+        margin: 0 4px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+      .footer .social-links a:hover {
+        background: var(--accent-color);
+        color: var(--contrast-color);
+      }
+
+      /* Skill category heading */
+      .skill-category h5 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .skill-category h5 i {
+        color: var(--accent-color);
+        font-size: 18px;
+      }
+
+      /* Smaller portfolio images */
+      .portfolio .portfolio-content .snd-portfolio-img {
+        aspect-ratio: 16 / 9;
+      }
+    </style>
   </head>
 
   <body class="index-page">
@@ -172,7 +368,6 @@
             </div>
             <div class="col-lg-8 content">
               <h2>IT Project Manager &amp; Solution Architect</h2>
-              <br />
 
               <div class="row">
                 <div class="col-lg-6">
@@ -208,54 +403,40 @@
             </div>
           </div>
 
-          <br />
-          <div class="row">
-            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-              <h3>Interests</h3>
-              <p class="fst-italic" style="color: color-mix(in srgb, var(--default-color), transparent 30%);">
-                <strong style="color: var(--default-color);">My field of interests:</strong>
-              </p>
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>Project Management</span>
-                    </li>
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>Solution Design</span>
-                    </li>
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>System Architectures</span>
-                    </li>
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>Strategy Executions</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul style="list-style: none; padding-left: 0;">
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>Agile Methodologies (Scrum)</span>
-                    </li>
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>Machine Learning Research</span>
-                    </li>
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>Software Development</span>
-                    </li>
-                    <li style="padding: 8px 0; color: color-mix(in srgb, var(--default-color), transparent 20%);">
-                      <i class="bi bi-arrow-right-circle-fill" style="color: var(--accent-color); margin-right: 10px;"></i>
-                      <span>DevOps</span>
-                    </li>
-                  </ul>
-                </div>
+          <div class="mt-4" data-aos="fade-left">
+            <h3>Interests</h3>
+            <div class="interests-grid mt-3">
+              <div class="interest-item">
+                <i class="bi bi-kanban"></i>
+                <span>Project Management</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-diagram-3"></i>
+                <span>Solution Design</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-hdd-network"></i>
+                <span>System Architectures</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-bullseye"></i>
+                <span>Strategy Execution</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-arrow-repeat"></i>
+                <span>Agile Methodologies (Scrum)</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-robot"></i>
+                <span>Machine Learning Research</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-code-slash"></i>
+                <span>Software Development</span>
+              </div>
+              <div class="interest-item">
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>DevOps</span>
               </div>
             </div>
           </div>
@@ -331,40 +512,69 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="skill-category mb-4">
-                <h5 class="mb-3" style="font-weight: 600;">Programming & Scripting Languages</h5>
-                <p style="color: color-mix(in srgb, var(--default-color), transparent 30%);">
-                  Python, PHP, Java, C, JavaScript, SQL
-                </p>
+                <h5 class="mb-3" style="font-weight: 600;"><i class="bi bi-terminal"></i> Programming & Scripting Languages</h5>
+                <div class="skill-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">PHP</span>
+                  <span class="tag">Java</span>
+                  <span class="tag">C</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">SQL</span>
+                </div>
               </div>
 
               <div class="skill-category mb-4">
-                <h5 class="mb-3" style="font-weight: 600;">Machine Learning & Data Science</h5>
-                <p style="color: color-mix(in srgb, var(--default-color), transparent 30%);">
-                  PyTorch, TensorFlow, Scikit-learn, NumPy, Pandas, Matplotlib, NLTK, Computer Vision, NLP
-                </p>
+                <h5 class="mb-3" style="font-weight: 600;"><i class="bi bi-cpu"></i> Machine Learning & Data Science</h5>
+                <div class="skill-tags">
+                  <span class="tag">PyTorch</span>
+                  <span class="tag">TensorFlow</span>
+                  <span class="tag">Scikit-learn</span>
+                  <span class="tag">NumPy</span>
+                  <span class="tag">Pandas</span>
+                  <span class="tag">Matplotlib</span>
+                  <span class="tag">NLTK</span>
+                  <span class="tag">Computer Vision</span>
+                  <span class="tag">NLP</span>
+                </div>
               </div>
 
               <div class="skill-category mb-4">
-                <h5 class="mb-3" style="font-weight: 600;">Frameworks & Libraries</h5>
-                <p style="color: color-mix(in srgb, var(--default-color), transparent 30%);">
-                  Django, Django Rest Framework, MVC Framework, ORM Framework
-                </p>
+                <h5 class="mb-3" style="font-weight: 600;"><i class="bi bi-layers"></i> Frameworks & Libraries</h5>
+                <div class="skill-tags">
+                  <span class="tag">Django</span>
+                  <span class="tag">Django Rest Framework</span>
+                  <span class="tag">MVC Framework</span>
+                  <span class="tag">ORM Framework</span>
+                </div>
               </div>
             </div>
 
             <div class="col-lg-6">
               <div class="skill-category mb-4">
-                <h5 class="mb-3" style="font-weight: 600;">DevOps & Database</h5>
-                <p style="color: color-mix(in srgb, var(--default-color), transparent 30%);">
-                  Linux (Bash Scripting), Containerization & Orchestration (Docker, Kubernetes), Git, GitHub, MySQL, PostgreSQL, SQLite
-                </p>
+                <h5 class="mb-3" style="font-weight: 600;"><i class="bi bi-hdd-rack"></i> DevOps & Database</h5>
+                <div class="skill-tags">
+                  <span class="tag">Linux</span>
+                  <span class="tag">Bash Scripting</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">Kubernetes</span>
+                  <span class="tag">Git</span>
+                  <span class="tag">GitHub</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">SQLite</span>
+                </div>
               </div>
 
               <div class="skill-category mb-4">
-                <h5 class="mb-3" style="font-weight: 600;">Project Management & Other Skills</h5>
-                <p style="color: color-mix(in srgb, var(--default-color), transparent 30%);">
-                  Project Management, Stakeholder Management, System Design, Technical Solution Design, Agile Methodologies (Scrum), Risk Management & Mitigation
-                </p>
+                <h5 class="mb-3" style="font-weight: 600;"><i class="bi bi-clipboard-data"></i> Project Management & Other Skills</h5>
+                <div class="skill-tags">
+                  <span class="tag">Project Management</span>
+                  <span class="tag">Stakeholder Management</span>
+                  <span class="tag">System Design</span>
+                  <span class="tag">Technical Solution Design</span>
+                  <span class="tag">Agile (Scrum)</span>
+                  <span class="tag">Risk Management</span>
+                </div>
               </div>
             </div>
           </div>
@@ -461,7 +671,7 @@
                     Mentor undergraduate students in software development
                     lifecycle (SDLC), requirement analysis, system modeling, and
                     system design, integrating real-world project management and
-                    architecture insights into academic learning..
+                    architecture insights into academic learning.
                   </li>
                   <li>
                     Collaborate with the academic department to align course
@@ -683,7 +893,7 @@
       <!-- /Awards Section -->
 
       <!-- Portfolio Section -->
-      <section id="portfolio" class="portfolio section light-background">
+      <section id="portfolio" class="portfolio section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Portfolio (Projects)</h2>
@@ -1075,109 +1285,65 @@
       <!-- /Portfolio Section -->
 
       <!-- ======= Publications Section ======= -->
-      <section id="publications" class="about">
+      <section id="publications" class="section light-background">
         <div class="container">
-          <div class="section-title">
+          <div class="container section-title" data-aos="fade-up">
             <h2>Publications</h2>
           </div>
 
-          <div class="">
+          <div class="publication-card" data-aos="fade-up" data-aos-delay="100">
             <h5>
-              <strong
-                >Irregular Sleep Pattern Identification and Analysis from Social
-                Media Dataset using Hybrid Deep Learning based Attention
-                Mechanism.</strong
-              >
+              <strong>Irregular Sleep Pattern Identification and Analysis from Social
+              Media Dataset using Hybrid Deep Learning based Attention
+              Mechanism.</strong>
             </h5>
-            <h6>
+            <p class="pub-authors">
               <strong>Authors:</strong> <strong>M.J. Islam</strong>, M.F.A.
               Rafi, P. Podder, A. Siddika, M. Kabir, E.M. Khan, N. Islam, S.
               Mukta.
-            </h6>
-            <p>
-              <em>Data and Information Management Journal (Elsevier), 2025</em>
             </p>
-            <p>
-              DOI:
-              <a
-                href="https://www.sciencedirect.com/science/article/pii/S2543925125000129"
-                target="_blank"
-                >10.1016/j.dim.2025.100104</a
-              >
-              ||
-              <a
-                href="https://github.com/Jawwad-Fida/Predicting-Irregular-Sleeping-Patterns-From-Tweets"
-                target="_blank"
-                >GitHub</a
-              >
+            <p class="pub-venue">
+              Data and Information Management Journal (Elsevier), 2025
             </p>
-            <!-- <p>
-              <strong>About:</strong> Medical image classification is critical
-              in clinical decision-making, requiring efficient and precise
-              evaluation of images. We propose an E-MedViTR model that boosts
-              the performance of the vision transformer with registers by adding
-              an enhanced classifier head. Research in this field could pave the
-              way for more personalized, accurate, and efficient diagnostic
-              procedures in medical imaging, benefiting both clinicians and
-              patients.
-            </p> -->
+            <div class="pub-links">
+              <a href="https://www.sciencedirect.com/science/article/pii/S2543925125000129" target="_blank">
+                <i class="bi bi-journal-text"></i> DOI: 10.1016/j.dim.2025.100104
+              </a>
+              <a href="https://github.com/Jawwad-Fida/Predicting-Irregular-Sleeping-Patterns-From-Tweets" target="_blank">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+            </div>
           </div>
-          <br />
 
-          <div class="">
+          <div class="publication-card" data-aos="fade-up" data-aos-delay="200">
             <h5>
-              <strong
-                >Watch, Listen, Understand, Mislead: Tri-modal Adversarial
-                Attacks on Short Videos for Content Appropriateness
-                Evaluation.</strong
-              >
+              <strong>Watch, Listen, Understand, Mislead: Tri-modal Adversarial
+              Attacks on Short Videos for Content Appropriateness
+              Evaluation.</strong>
             </h5>
-            <h6>
+            <p class="pub-authors">
               <strong>Authors:</strong> S. H. Mustakim, S M Jishanul Islam, U.
               M. Muna, M. Chowdhury, <strong>M.J. Islam</strong>, S. Ahmmed, T.
               Reeti, S. T. A. Dhrubo, and S. Shatabda
-            </h6>
-            <p>
-              <em
-                >Long-paper (proceedings) track in
-                <strong
-                  >SVU Workshop at the IEEE/CVF International Conference on
-                  Computer Vision (ICCV)</strong
-                >, 2025</em
-              >
             </p>
-            <p>
-              Link:
-              <a
-                href="https://openaccess.thecvf.com/content/ICCV2025W/SVU/html/Mustakim_Watch_Listen_Understand_Mislead_Tri-modal_Adversarial_Attacks_on_Short_Videos_ICCVW_2025_paper.html"
-                target="_blank"
-                >CVF ICCV Workshops 2025</a
-              >
-              ||
-              <a
-                href="https://github.com/Jawwad-Fida/ChimeraBreak"
-                target="_blank"
-                >GitHub</a
-              >
+            <p class="pub-venue">
+              Long-paper (proceedings) track in
+              <strong>SVU Workshop at the IEEE/CVF International Conference on
+              Computer Vision (ICCV)</strong>, 2025
             </p>
-            <!-- <p>
-              <strong>Abstract:</strong> Anti-Muslim hate speech has emerged
-              within memes, characterized by context-dependent and rhetorical
-              messages using text and images that seemingly mimic humor but
-              convey Islamophobic sentiments. This work presents a novel dataset
-              and proposes a classifier based on the Vision-and-Language
-              Transformer (ViLT) specifically tailored to identify anti-Muslim
-              hate within memes by integrating both visual and textual
-              representations. Our model leverages joint modal embeddings
-              between meme images and incorporated text to capture nuanced
-              Islamophobic narratives that are unique to meme culture, providing
-              both high detection accuracy and interoperability.
-            </p> -->
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/ICCV2025W/SVU/html/Mustakim_Watch_Listen_Understand_Mislead_Tri-modal_Adversarial_Attacks_on_Short_Videos_ICCVW_2025_paper.html" target="_blank">
+                <i class="bi bi-file-earmark-text"></i> CVF ICCV Workshops 2025
+              </a>
+              <a href="https://github.com/Jawwad-Fida/ChimeraBreak" target="_blank">
+                <i class="bi bi-github"></i> GitHub
+              </a>
+            </div>
           </div>
-          <hr style="height: 5px" />
-          <br />
 
-          <div class="section-title">
+          <hr class="section-divider" />
+
+          <div class="container section-title" data-aos="fade-up">
             <h2>Certifications</h2>
           </div>
 
@@ -1186,15 +1352,7 @@
               <div class="cert-card">
                 <h5>Machine Learning</h5>
                 <p>
-                  <em
-                    ><a
-                      href="https://doi.org/10.1109/ICEEICT62016.2024.10534573"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Stanford Online
-                    </a>
-                    (Provided by Stanford University)</em
-                  >
+                  <em>Stanford Online (Provided by Stanford University)</em>
                 </p>
               </div>
 
@@ -1232,9 +1390,7 @@
               </div>
             </div>
 
-            <br />
-
-            <div class="cert-grid">
+            <div class="cert-grid" style="margin-top: 20px;">
               <div class="cert-card">
                 <h5>
                   Supervised Machine Learning: Regression and Classification
@@ -1288,60 +1444,54 @@
         <!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-5">
+          <div class="row gy-4 justify-content-center">
+            <div class="col-lg-8">
               <div class="info-wrap">
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  <i class="bi bi-envelope flex-shrink-0"></i>
-                  <div>
-                    <h3>Email</h3>
-                    <p>jawwad.fida@gmail.com</p>
+                <div class="row gy-4">
+                  <div class="col-md-4">
+                    <div
+                      class="info-item d-flex"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      <i class="bi bi-envelope flex-shrink-0"></i>
+                      <div>
+                        <h3>Email</h3>
+                        <p>jawwad.fida@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div
+                      class="info-item d-flex"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      <i class="bi bi-telephone flex-shrink-0"></i>
+                      <div>
+                        <h3>Call</h3>
+                        <p>+88 01833183766</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div
+                      class="info-item d-flex"
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                    >
+                      <i class="bi bi-geo-alt flex-shrink-0"></i>
+                      <div>
+                        <h3>Address</h3>
+                        <p>Dhaka, Bangladesh</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <!-- End Info Item -->
-
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <i class="bi bi-telephone flex-shrink-0"></i>
-                  <div>
-                    <h3>Call</h3>
-                    <p>+88 01833183766</p>
-                  </div>
-                </div>
-                <!-- End Info Item -->
-
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <i class="bi bi-geo-alt flex-shrink-0"></i>
-                  <div>
-                    <h3>Address</h3>
-                    <p>Dhaka, Bangladesh</p>
-                  </div>
-                </div>
-                <!-- End Info Item -->
-
-                <!-- <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-                  frameborder="0"
-                  style="border: 0; width: 100%; height: 270px"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe> -->
               </div>
             </div>
-
-            <!-- End Contact Form -->
           </div>
         </div>
       </section>
@@ -1350,20 +1500,18 @@
 
     <footer id="footer" class="footer position-relative light-background">
       <div class="container">
+        <div class="social-links text-center mb-3">
+          <a href="https://www.linkedin.com/in/jawwadfida/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/Jawwad-Fida" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+          <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=1&hl=en&user=lPrFLysAAAAJ" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-graduation-cap"></i></a>
+        </div>
         <div class="copyright text-center">
           <p>
-            © <span>Copyright</span>
+            &copy; <span>Copyright</span>
             <strong class="px-1 sitename">Mohammed Jawwadul Islam</strong>
             <span>All Rights Reserved</span>
           </p>
         </div>
-        <!-- <div class="credits"> -->
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-        <!-- </div> -->
       </div>
     </footer>
 
