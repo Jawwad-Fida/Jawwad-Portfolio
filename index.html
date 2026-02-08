@@ -75,6 +75,79 @@
       .about .img-fluid {
         border-radius: 12px;
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+        border: 3px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+      }
+
+      /* About section - role tagline */
+      .about .about-role-tagline {
+        font-size: 15px;
+        color: var(--accent-color);
+        font-weight: 500;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+
+      /* About section - info grid */
+      .about .about-info-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+        background: var(--surface-color);
+        border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+        transition: all 0.3s ease;
+      }
+
+      .about .about-info-item:hover {
+        border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+        box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.12);
+        transform: translateY(-2px);
+      }
+
+      .about .about-info-icon {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        transition: all 0.3s ease;
+      }
+
+      .about .about-info-icon i {
+        font-size: 18px;
+        color: var(--accent-color);
+      }
+
+      .about .about-info-item:hover .about-info-icon {
+        background: var(--accent-color);
+      }
+
+      .about .about-info-item:hover .about-info-icon i {
+        color: var(--contrast-color);
+      }
+
+      .about .about-info-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: color-mix(in srgb, var(--default-color), transparent 40%);
+        margin-bottom: 2px;
+      }
+
+      .about .about-info-value {
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--heading-color);
+        word-break: break-word;
+        overflow-wrap: break-word;
       }
 
       /* Interests grid */
@@ -236,9 +309,109 @@
         font-size: 18px;
       }
 
-      /* Smaller portfolio images */
+      /* ---- Portfolio card enhancements ---- */
+      .portfolio .portfolio-content {
+        border-radius: 12px;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        background: var(--surface-color);
+        overflow: hidden;
+      }
+
+      .portfolio .portfolio-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.15);
+        border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+      }
+
+      .portfolio .portfolio-img-wrap {
+        position: relative;
+        overflow: hidden;
+      }
+
       .portfolio .portfolio-content .snd-portfolio-img {
         aspect-ratio: 16 / 9;
+        background: var(--background-color);
+      }
+
+      /* Override original hover scale to be subtler */
+      .portfolio .portfolio-content:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Caption below image */
+      .portfolio .portfolio-caption {
+        padding: 16px 18px;
+      }
+
+      .portfolio .portfolio-caption .portfolio-category {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent-color);
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        padding: 3px 10px;
+        border-radius: 9999px;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+
+      .portfolio .portfolio-caption h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--heading-color);
+        margin-bottom: 4px;
+        font-family: var(--heading-font);
+      }
+
+      .portfolio .portfolio-caption p {
+        font-size: 13px;
+        color: color-mix(in srgb, var(--default-color), transparent 25%);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* Hover overlay - simplified (title now in caption) */
+      .portfolio .portfolio-img-wrap .portfolio-info {
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        transition: all ease-in-out 0.3s;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .portfolio .portfolio-content:hover .portfolio-img-wrap .portfolio-info {
+        opacity: 1;
+      }
+
+      .portfolio .portfolio-img-wrap .portfolio-info .preview-link,
+      .portfolio .portfolio-img-wrap .portfolio-info .details-link {
+        position: static;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(4px);
+        color: #fff;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        line-height: 1;
+      }
+
+      .portfolio .portfolio-img-wrap .portfolio-info .preview-link:hover,
+      .portfolio .portfolio-img-wrap .portfolio-info .details-link:hover {
+        background: var(--accent-color);
+        transform: scale(1.1);
       }
 
       /* ---- Responsive overrides ---- */
@@ -248,10 +421,55 @@
         .publication-card {
           padding: 22px;
         }
+
+        .about .col-lg-4 {
+          text-align: center;
+        }
+
+        .about .col-lg-4 .img-fluid {
+          max-width: 280px;
+          margin: 0 auto;
+        }
+
+        .about .content h2 {
+          text-align: center;
+        }
+
+        .about .about-role-tagline {
+          text-align: center;
+        }
       }
 
       /* Mobile */
       @media (max-width: 767px) {
+        .about .about-info-item {
+          padding: 12px 14px;
+          gap: 12px;
+          margin-bottom: 8px;
+        }
+
+        .about .about-info-icon {
+          width: 38px;
+          height: 38px;
+        }
+
+        .about .about-info-icon i {
+          font-size: 16px;
+        }
+
+        .about .about-info-value {
+          font-size: 14px;
+        }
+
+        .about .about-info-label {
+          font-size: 10px;
+        }
+
+        .about .about-role-tagline {
+          font-size: 14px;
+          margin-bottom: 18px;
+        }
+
         .interests-grid {
           grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
           gap: 10px;
@@ -309,10 +527,72 @@
           height: 32px;
           font-size: 14px;
         }
+
+        .portfolio .portfolio-caption {
+          padding: 14px 16px;
+        }
+
+        .portfolio .portfolio-caption h4 {
+          font-size: 15px;
+        }
+
+        .portfolio .portfolio-caption p {
+          font-size: 12px;
+        }
+
+        .portfolio .portfolio-caption .portfolio-category {
+          font-size: 10px;
+          padding: 2px 8px;
+          margin-bottom: 6px;
+        }
+
+        .portfolio .portfolio-img-wrap .portfolio-info .preview-link,
+        .portfolio .portfolio-img-wrap .portfolio-info .details-link {
+          width: 38px;
+          height: 38px;
+          font-size: 18px;
+        }
       }
 
       /* Small mobile */
       @media (max-width: 480px) {
+        .about .col-lg-4 .img-fluid {
+          max-width: 220px;
+        }
+
+        .about .about-info-item {
+          padding: 10px 12px;
+          gap: 10px;
+          margin-bottom: 6px;
+        }
+
+        .about .about-info-icon {
+          width: 34px;
+          height: 34px;
+          border-radius: 8px;
+        }
+
+        .about .about-info-icon i {
+          font-size: 14px;
+        }
+
+        .about .about-info-value {
+          font-size: 13px;
+        }
+
+        .about .about-info-label {
+          font-size: 9px;
+        }
+
+        .about .about-role-tagline {
+          font-size: 13px;
+          margin-bottom: 14px;
+        }
+
+        .about .content h2 {
+          font-size: 18px;
+        }
+
         .interests-grid {
           grid-template-columns: 1fr;
         }
@@ -328,6 +608,34 @@
 
         .section-divider {
           margin: 25px 0;
+        }
+
+        .portfolio .portfolio-content {
+          border-radius: 10px;
+        }
+
+        .portfolio .portfolio-caption {
+          padding: 12px 14px;
+        }
+
+        .portfolio .portfolio-caption h4 {
+          font-size: 14px;
+        }
+
+        .portfolio .portfolio-caption p {
+          font-size: 11px;
+        }
+
+        .portfolio .portfolio-caption .portfolio-category {
+          font-size: 9px;
+          margin-bottom: 5px;
+        }
+
+        .portfolio .portfolio-img-wrap .portfolio-info .preview-link,
+        .portfolio .portfolio-img-wrap .portfolio-info .details-link {
+          width: 36px;
+          height: 36px;
+          font-size: 16px;
         }
       }
     </style>
@@ -458,37 +766,53 @@
             </div>
             <div class="col-lg-8 content">
               <h2>IT Project Manager &amp; Solution Architect</h2>
+              <p class="about-role-tagline">Building scalable digital solutions &amp; leading agile delivery</p>
 
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Phone:</strong> <span>+88 01833183766</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i> <strong>City:</strong>
-                      <span>Dhaka, Bangladesh</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Email:</strong> <span>jawwad.fida@gmail.com</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Degree:</strong>
-                      <span>Computer Science & Engineering</span>
-                    </li>
-                  </ul>
+              <div class="row about-info-grid">
+                <div class="col-sm-6">
+                  <div class="about-info-item">
+                    <div class="about-info-icon">
+                      <i class="bi bi-telephone"></i>
+                    </div>
+                    <div>
+                      <span class="about-info-label">Phone</span>
+                      <span class="about-info-value">+88 01833183766</span>
+                    </div>
+                  </div>
                 </div>
-                <!-- <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div> -->
+                <div class="col-sm-6">
+                  <div class="about-info-item">
+                    <div class="about-info-icon">
+                      <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <div>
+                      <span class="about-info-label">City</span>
+                      <span class="about-info-value">Dhaka, Bangladesh</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="about-info-item">
+                    <div class="about-info-icon">
+                      <i class="bi bi-envelope"></i>
+                    </div>
+                    <div>
+                      <span class="about-info-label">Email</span>
+                      <span class="about-info-value">jawwad.fida@gmail.com</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="about-info-item">
+                    <div class="about-info-icon">
+                      <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <div>
+                      <span class="about-info-label">Degree</span>
+                      <span class="about-info-value">Computer Science &amp; Engineering</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -978,6 +1302,20 @@
               </div>
             </div>
           </div>
+
+          <!-- Achievement Gallery Links -->
+          <div class="awards-gallery-links" data-aos="fade-up" data-aos-delay="550">
+            <a href="portfolio/work-achievements.html" class="awards-gallery-link">
+              <i class="bi bi-briefcase-fill"></i>
+              Professional Achievements
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="portfolio/academic-achievements.html" class="awards-gallery-link academic">
+              <i class="bi bi-mortarboard-fill"></i>
+              Academic Achievements
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
         </div>
       </section>
       <!-- /Awards Section -->
@@ -1016,357 +1354,141 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/robi-icon.jpg"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/robi-icon.jpg" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/robi-icon.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/robi-cw.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Digital</span>
                     <h4>Robi Corporate Websites</h4>
-                    <p>Robi & Airtel BD Corporate Websites Revamp Project</p>
-                    <a
-                      href="assets/img/portfolio/robi-icon.jpg"
-                      data-gallery="portfolio-gallery-app"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/robi-cw.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
+                    <p>Robi &amp; Airtel BD Corporate Websites Revamp Project</p>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/snd.jpg"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
-                    <h4>Unified S&D</h4>
-                    <p>
-                      Unified Sales & Distribution (S&D) Systems Revamp Project
-                    </p>
-                    <a
-                      href="assets/img/portfolio/snd.jpg"
-                      data-gallery="portfolio-gallery-product"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/unified-snd.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/snd.jpg" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/snd.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/unified-snd.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Sales &amp; Distribution</span>
+                    <h4>Unified S&amp;D</h4>
+                    <p>Unified Sales &amp; Distribution (S&amp;D) Systems Revamp Project</p>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/Binge-logo.png"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/Binge-logo.png" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/Binge-logo.png" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/binge-web.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Customer Experience</span>
                     <h4>Binge OTT</h4>
                     <p>Binge OTT Platform</p>
-                    <a
-                      href="assets/img/portfolio/Binge-logo.png"
-                      data-gallery="portfolio-gallery-branding"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/binge-web.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/healthstack-icon.png"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/healthstack-icon.png" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/Healthstack-logo.png" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/healthstack.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Academic</span>
                     <h4>Healthstack</h4>
                     <p>Healthstack System - Software Engineering Project</p>
-                    <a
-                      href="assets/img/portfolio/Healthstack-logo.png"
-                      data-gallery="portfolio-gallery-book"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/healthstack.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/axentec-logo.jpg"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/axentec-logo.jpg" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/axentec-logo.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/axentec-cw.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Digital</span>
                     <h4>Axentec Website</h4>
                     <p>Axentec PLC Corporate Website Revamp Project</p>
-                    <a
-                      href="assets/img/portfolio/app-2.jpg"
-                      title="App 2"
-                      data-gallery="portfolio-gallery-app"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/axentec-cw.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <!-- <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/product-2.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
-                    <h4>Sales 2</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    <a
-                      href="assets/img/portfolio/product-2.jpg"
-                      title="Product 2"
-                      data-gallery="portfolio-gallery-product"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/CFM-logo.png" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/CFM-logo.png" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/cfm-web.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
                   </div>
-                </div>
-              </div> -->
-              <!-- End Portfolio Item -->
-
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/CFM-logo.png"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Customer Experience</span>
                     <h4>CFM</h4>
                     <p>Customer Feedback Management (CFM) Solution</p>
-                    <a
-                      href="assets/img/portfolio/CFM-logo.png"
-                      data-gallery="portfolio-gallery-branding"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/cfm-web.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/radon-logo.png"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
-                    <h4>Real Estate</h4>
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/radon-logo.png" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/radon-logo2.png" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/radon.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Academic</span>
+                    <h4>RADON</h4>
                     <p>RADON - Real Estate Business Solution</p>
-                    <a
-                      href="assets/img/portfolio/radon-logo2.png"
-                      data-gallery="portfolio-gallery-book"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio/radon.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
-              >
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                 <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/robiwifi-logo.jpg"
-                    class="img-fluid snd-portfolio-img"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
+                  <div class="portfolio-img-wrap">
+                    <img src="assets/img/portfolio/robiwifi-logo.jpg" class="img-fluid snd-portfolio-img" alt="" />
+                    <div class="portfolio-info">
+                      <a href="assets/img/portfolio/robiwifi-logo.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                      <a href="portfolio/robiwifi-web.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-caption">
+                    <span class="portfolio-category">Digital</span>
                     <h4>RobiWifi</h4>
                     <p>RobiWifi Website - Fixed Wireless Access Solution</p>
-                    <a
-                      href="assets/img/portfolio/robiwifi-logo.jpg"
-                      data-gallery="portfolio-gallery-app"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a href="portfolio/robiwifi-web.html" class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
                   </div>
                 </div>
               </div>
-              <!-- End Portfolio Item -->
-
-              <!-- <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/product-3.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
-                    <h4>Sales 3</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    <a
-                      href="assets/img/portfolio/product-3.jpg"
-                      title="Product 3"
-                      data-gallery="portfolio-gallery-product"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
-                </div>
-              </div> -->
-              <!-- End Portfolio Item -->
-
-              <!-- <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/branding-3.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
-                    <h4>CX 3</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    <a
-                      href="assets/img/portfolio/branding-3.jpg"
-                      title="Branding 2"
-                      data-gallery="portfolio-gallery-branding"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
-                </div>
-              </div> -->
-              <!-- End Portfolio Item -->
-
-              <!-- <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/books-3.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
-                  <div class="portfolio-info">
-                    <h4>Books 3</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    <a
-                      href="assets/img/portfolio/books-3.jpg"
-                      title="Branding 3"
-                      data-gallery="portfolio-gallery-book"
-                      class="glightbox preview-link"
-                      ><i class="bi bi-zoom-in"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      title="More Details"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
-                </div>
-              </div> -->
-              <!-- End Portfolio Item -->
             </div>
             <!-- End Portfolio Container -->
           </div>
@@ -1433,8 +1555,8 @@
 
           <hr class="section-divider" />
 
-          <div class="container section-title" data-aos="fade-up">
-            <h2>Certifications</h2>
+          <div class="container section-title" data-aos="fade-up" style="padding-bottom: 20px;">
+            <h2 style="margin-bottom: 10px;">Certifications</h2>
           </div>
 
           <div id="certifications">
