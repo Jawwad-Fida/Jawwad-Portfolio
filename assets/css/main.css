@@ -1678,6 +1678,15 @@ section,
     line-height: 1.4;
   }
 
+  .section-title p {
+    font-size: 14px;
+  }
+
+  .resume .resume-item ul li,
+  .resume .resume-item p {
+    font-size: 14px;
+  }
+
   .contact .info-item {
     margin-bottom: 25px;
   }
